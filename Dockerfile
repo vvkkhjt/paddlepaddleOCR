@@ -8,13 +8,11 @@ RUN python3.7 -m pip install paddlepaddle==2.0.0rc0 -i https://mirror.baidu.com/
 
 RUN pip3.7 install paddlehub --upgrade -i https://mirror.baidu.com/pypi/simple
 
-RUN git clone https://github.com/PaddlePaddle/PaddleOCR.git /PaddleOCR
+ADD ./ /PaddleOCR
 
 WORKDIR /PaddleOCR
 
 RUN pip3.7 install -r requirements.txt -i https://mirror.baidu.com/pypi/simple
-
-ADD ./inference/ /PaddleOCR/
 
 EXPOSE 8868
 
